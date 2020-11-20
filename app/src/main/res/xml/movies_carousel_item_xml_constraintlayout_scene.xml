@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/poster_shrink_transition"
+        motion:constraintSetEnd="@+id/posterShrink"
+        motion:constraintSetStart="@id/start"
+        motion:duration="700"
+        motion:motionInterpolator="easeIn">
+        <KeyFrameSet>
+
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/movie_poster"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.5"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0" />
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/posterShrink">
+        <Constraint
+            android:id="@+id/movie_poster"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
+            android:scaleX="0"
+            android:scaleY="0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.5"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0" />
+        <Constraint
+            android:id="@+id/movie_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/movie_poster" />
+        <Constraint
+            android:id="@+id/movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="@id/movie_poster"
+            motion:layout_constraintHorizontal_bias="0.25"
+            motion:layout_constraintStart_toStartOf="@id/movie_poster"
+            motion:layout_constraintTop_toBottomOf="@id/genres_chips"
+            motion:layout_constraintVertical_bias="0" />
+
+    </ConstraintSet>
+
+
+    <Transition
+        android:id="@+id/details_rise_up_transition"
+        motion:constraintSetEnd="@+id/titleRiseUp"
+        motion:constraintSetStart="@id/posterShrink"
+        motion:duration="400"
+        motion:motionInterpolator="easeInOut" />
+
+    <ConstraintSet android:id="@+id/titleRiseUp">
+        <Constraint
+            android:id="@+id/movie_poster"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
+            android:scaleX="0"
+            android:scaleY="0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.5"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0" />
+        <Constraint
+            android:id="@+id/movie_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="@id/movie_poster"
+            motion:layout_constraintHorizontal_bias="0.25"
+            motion:layout_constraintStart_toStartOf="@id/movie_poster"
+            motion:layout_constraintTop_toBottomOf="@id/genres_chips"
+            motion:layout_constraintVertical_bias="0" />
+        <Constraint
+            android:id="@+id/star_two_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toEndOf="@+id/guideline"
+            motion:layout_constraintTop_toBottomOf="@id/guideline4"
+            motion:layout_constraintVertical_bias="1" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/details_fluctuation_transition"
+        motion:constraintSetEnd="@+id/titleFlucuation"
+        motion:constraintSetStart="@id/titleRiseUp"
+        motion:duration="100"
+        motion:motionInterpolator="bounce" />
+
+    <ConstraintSet android:id="@+id/titleFlucuation">
+        <Constraint
+            android:id="@+id/movie_poster"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="20dp"
+            android:scaleX="0"
+            android:scaleY="0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.5"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0" />
+        <Constraint
+            android:id="@+id/movie_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="@id/movie_poster"
+            motion:layout_constraintHorizontal_bias="0.25"
+            motion:layout_constraintStart_toStartOf="@id/movie_poster"
+            motion:layout_constraintTop_toBottomOf="@id/genres_chips"
+            motion:layout_constraintVertical_bias="0" />
+        <Constraint
+            android:id="@+id/star_two_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationY="-10dp"
+            motion:layout_constraintBottom_toBottomOf="@id/movie_rating"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toEndOf="@+id/star_one_rating"
+            motion:layout_constraintVertical_bias="0" />
+        <Constraint
+            android:id="@+id/movie_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/third_star_rise_up"
+        motion:constraintSetEnd="@id/thirdStarRiseUpEnd"
+        motion:constraintSetStart="@+id/titleFlucuation"
+        motion:duration="100"
+        motion:motionInterpolator="bounce" />
+
+    <ConstraintSet
+        android:id="@+id/thirdStarRiseUpEnd"
+        motion:deriveConstraintsFrom="@id/titleFlucuation">
+        <Constraint
+            android:id="@+id/star_three_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationY="-20dp"
+            motion:layout_constraintBottom_toBottomOf="@id/movie_rating"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toEndOf="@+id/star_two_rating"
+            motion:layout_constraintVertical_bias="1" />
+    </ConstraintSet>
+    <Transition
+        android:id="@+id/fourth_star_rise_up"
+        motion:constraintSetEnd="@id/fourthStarRiseUpEnd"
+        motion:constraintSetStart="@+id/thirdStarRiseUpEnd"
+        motion:duration="100"
+        motion:motionInterpolator="bounce" />
+
+    <ConstraintSet
+        android:id="@+id/fourthStarRiseUpEnd"
+        motion:deriveConstraintsFrom="@id/thirdStarRiseUpEnd">
+
+
+        <Constraint
+            android:id="@+id/star_four_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationY="-30dp"
+            motion:layout_constraintBottom_toBottomOf="@id/movie_rating"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toEndOf="@+id/star_three_rating"
+            motion:layout_constraintVertical_bias="1" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/fifth_star_rise_up"
+        motion:constraintSetEnd="@id/fifthStarRiseUpEnd"
+        motion:constraintSetStart="@+id/fourthStarRiseUpEnd"
+        motion:duration="100"
+        motion:motionInterpolator="bounce" />
+
+    <ConstraintSet
+        android:id="@+id/fifthStarRiseUpEnd"
+        motion:deriveConstraintsFrom="@id/fourthStarRiseUpEnd">
+        <Constraint
+            android:id="@+id/star_five_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationY="-40dp"
+            motion:layout_constraintBottom_toBottomOf="@id/movie_rating"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toEndOf="@+id/star_four_rating"
+            motion:layout_constraintVertical_bias="1" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/adjustment_1"
+        motion:constraintSetEnd="@+id/starTwoSettleDown"
+        motion:constraintSetStart="@id/fifthStarRiseUpEnd"
+        motion:duration="50"
+        motion:motionInterpolator="bounce" />
+
+    <ConstraintSet
+        android:id="@+id/starTwoSettleDown"
+        motion:deriveConstraintsFrom="@id/fifthStarRiseUpEnd">
+        <Constraint
+            android:id="@+id/star_two_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationY="0dp"
+            motion:layout_constraintBottom_toBottomOf="@id/movie_rating"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toEndOf="@+id/star_one_rating"
+            motion:layout_constraintVertical_bias="0" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/adjustment_2"
+        motion:constraintSetEnd="@+id/starThreeSettleDown"
+        motion:constraintSetStart="@id/starTwoSettleDown"
+        motion:duration="50"
+        motion:motionInterpolator="bounce" />
+
+    <ConstraintSet
+        android:id="@+id/starThreeSettleDown"
+        motion:deriveConstraintsFrom="@id/starTwoSettleDown">
+        <Constraint
+            android:id="@+id/star_three_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationY="0dp"
+            motion:layout_constraintBottom_toBottomOf="@id/movie_rating"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toEndOf="@+id/star_two_rating"
+            motion:layout_constraintVertical_bias="1" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/adjustment_3"
+        motion:constraintSetEnd="@+id/starFourSettleDown"
+        motion:constraintSetStart="@id/starThreeSettleDown"
+        motion:duration="50"
+        motion:motionInterpolator="bounce" />
+
+    <ConstraintSet
+        android:id="@+id/starFourSettleDown"
+        motion:deriveConstraintsFrom="@id/starThreeSettleDown">
+        <Constraint
+            android:id="@+id/star_four_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationY="0dp"
+            motion:layout_constraintBottom_toBottomOf="@id/movie_rating"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toEndOf="@+id/star_three_rating"
+            motion:layout_constraintVertical_bias="1" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/adjustment_4"
+        motion:constraintSetEnd="@+id/starFiveSettleDown"
+        motion:constraintSetStart="@id/starFourSettleDown"
+        motion:duration="50"
+        motion:motionInterpolator="bounce" />
+
+    <ConstraintSet
+        android:id="@+id/starFiveSettleDown"
+        motion:deriveConstraintsFrom="@id/starFourSettleDown">
+        <Constraint
+            android:id="@+id/star_five_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:translationY="0dp"
+            motion:layout_constraintBottom_toBottomOf="@id/movie_rating"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toEndOf="@+id/star_four_rating"
+            motion:layout_constraintVertical_bias="1" />
+        <Constraint
+            android:id="@+id/movie_director"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="parent" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/beginning_of_movie_details"
+        motion:constraintSetEnd="@+id/movieDetailsRiseUp"
+        motion:constraintSetStart="@id/starFiveSettleDown"
+        motion:duration="50"
+        motion:motionInterpolator="linear">
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="80"
+                motion:motionTarget="@+id/movie_director" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet
+        android:id="@+id/movieDetailsRiseUp"
+        motion:deriveConstraintsFrom="@id/starFiveSettleDown">
+        <Constraint
+            android:id="@+id/movie_director"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/movie_rating" />
+        <Constraint
+            android:id="@+id/actors_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.1" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/movie_details_1"
+        motion:constraintSetEnd="@+id/restOfMovieDetailsRiseUp"
+        motion:constraintSetStart="@id/movieDetailsRiseUp"
+        motion:duration="50"
+        motion:motionInterpolator="linear">
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="80"
+                motion:motionTarget="@+id/actors_label" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet
+        android:id="@id/restOfMovieDetailsRiseUp"
+        motion:deriveConstraintsFrom="@id/movieDetailsRiseUp">
+        <Constraint
+            android:id="@+id/actors_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/movie_director"
+            motion:layout_constraintVertical_bias="0.1" />
+        <Constraint
+            android:id="@+id/introduction_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.2" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/movie_details_2"
+        motion:constraintSetEnd="@+id/movieDetails2"
+        motion:constraintSetStart="@id/restOfMovieDetailsRiseUp"
+        motion:duration="50"
+        motion:motionInterpolator="linear">
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="80"
+                motion:motionTarget="@+id/introduction_label" />
+        </KeyFrameSet>
+    </Transition>
+    <ConstraintSet
+        android:id="@+id/movieDetails2"
+        motion:deriveConstraintsFrom="@id/restOfMovieDetailsRiseUp">
+        <Constraint
+            android:id="@+id/introduction_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/actors_list"
+            motion:layout_constraintVertical_bias="0.2" />
+    </ConstraintSet>
+</MotionScene>

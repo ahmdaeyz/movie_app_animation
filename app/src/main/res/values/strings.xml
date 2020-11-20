@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Convertional Movie App</string>
+    <string name="close_btn_cd">Close button</string>
+    <string name="adjust_btn_cd">Adjust button</string>
+    <string name="buy_ticket_btn">Buy Ticket</string>
+    <string name="actor_picture_cd">Actor picture</string>
+    <string name="director_format">Director / %s</string>
+    <string name="actors_label">Actors</string>
+    <string name="introduction_label">Introduction</string>
+</resources>
